@@ -1,4 +1,6 @@
 {
+	// Dumb
+	"conventionalCommits.gitmoji": false,
 	// Branch protection
 	"git.branchProtection": ["master", "dev"],
 	"git.branchProtectionPrompt": "alwaysPrompt"
