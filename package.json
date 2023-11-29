@@ -3,8 +3,12 @@
 	"private": true,
 	"license": "GPL-3.0-only",
 	"version": "0.0.0",
+	"scripts": {
+		"prepare": "husky install"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.4.1",
+		"husky": "^8.0.3",
 		"prettier": "^3.1.0"
 	}
 }
