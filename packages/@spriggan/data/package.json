@@ -1,0 +1,13 @@
+{
+	"name": "@spriggan/data",
+	"private": true,
+	"type": "module",
+	"license": "GPL-3.0-only",
+	"version": "0.0.0",
+	"devDependencies": {
+		"@spriggan/config": "workspace:^"
+	},
+	"dependencies": {
+		"@spriggan/core": "workspace:^"
+	}
+}

@@ -1,0 +1,27 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .: {}
+
+  packages/@spriggan/config: {}
+
+  packages/@spriggan/core:
+    devDependencies:
+      '@spriggan/config':
+        specifier: workspace:^
+        version: link:../config
+
+  packages/@spriggan/data:
+    dependencies:
+      '@spriggan/core':
+        specifier: workspace:^
+        version: link:../core
+    devDependencies:
+      '@spriggan/config':
+        specifier: workspace:^
+        version: link:../config
