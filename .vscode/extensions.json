@@ -1,5 +1,6 @@
 {
 	"recommendations": [
+		"asciidoctor.asciidoctor-vscode",
 		"vivaxy.vscode-conventional-commits"
 	]
 }

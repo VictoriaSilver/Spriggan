@@ -1,4 +1,6 @@
 {
+	// Because it will keep asking and altering this file otherwise
+	"asciidoc.antora.enableAntoraSupport": false,
 	// Dumb
 	"conventionalCommits.gitmoji": false,
 	// Branch protection
