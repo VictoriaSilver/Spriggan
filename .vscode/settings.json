@@ -5,16 +5,22 @@
 	"conventionalCommits.gitmoji": false,
 	// Declutter with nesting
 	"explorer.fileNesting.patterns": {
+		"*.ts": "${capture}.*.ts",
 		"package.json": "pnpm-*.yaml"
 	},
 	// Branch protection
 	"git.branchProtection": ["master", "dev"],
 	"git.branchProtectionPrompt": "alwaysPrompt",
+	// For safety
+	"typescript.tsdk": "packages/@spriggan/config/node_modules/typescript/lib",
 	// Use Prettier
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	}
 }

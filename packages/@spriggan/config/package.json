@@ -3,5 +3,13 @@
 	"private": true,
 	"type": "module",
 	"license": "GPL-3.0-only",
-	"version": "0.0.0"
+	"version": "0.0.0",
+	"exports": {
+		"./typescript/*": "./typescript/*.json"
+	},
+	"devDependencies": {
+		"@tsconfig/recommended": "^1.0.3",
+		"@types/node": "^20.10.1",
+		"typescript": "^5.3.2"
+	}
 }

@@ -4,7 +4,12 @@
 	"type": "module",
 	"license": "GPL-3.0-only",
 	"version": "0.0.0",
+	"exports": "./src/index.ts",
+	"scripts": {
+		"build": "tsc -b tsconfig.build.json"
+	},
 	"devDependencies": {
-		"@spriggan/config": "workspace:^"
+		"@spriggan/config": "workspace:^",
+		"typescript": "^5.3.2"
 	}
 }
