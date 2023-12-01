@@ -1,0 +1,4 @@
+== @spriggan/bios
+
+* Contains functionality intended to interact with the system, such as logging
+* Contains the content management system

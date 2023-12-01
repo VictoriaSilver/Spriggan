@@ -1,0 +1,5 @@
+== @spriggan/gui
+
+* Contains the GUI
+* Acts as the build system
+
