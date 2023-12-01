@@ -5,6 +5,5 @@
 	"compilerOptions": {
 		"rootDir": "src",
 		"outDir": "out"
-	},
-	"references": [{ "path": "../bios/tsconfig.build.json" }]
+	}
 }

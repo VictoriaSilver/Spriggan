@@ -24,6 +24,27 @@ importers:
         specifier: ^1.10.16
         version: 1.10.16
 
+  packages/@spriggan/bios:
+    devDependencies:
+      '@spriggan/config':
+        specifier: workspace:^
+        version: link:../config
+      '@types/node':
+        specifier: ^20.10.0
+        version: 20.10.1
+      '@vitest/coverage-istanbul':
+        specifier: ^0.34.6
+        version: 0.34.6(vitest@0.34.6)
+      typescript:
+        specifier: ^5.3.2
+        version: 5.3.2
+      vite:
+        specifier: ^5.0.4
+        version: 5.0.4(@types/node@20.10.1)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6
+
   packages/@spriggan/config:
     devDependencies:
       '@tsconfig/recommended':
@@ -46,6 +67,10 @@ importers:
         version: 0.34.6
 
   packages/@spriggan/core:
+    dependencies:
+      '@spriggan/bios':
+        specifier: workspace:^
+        version: link:../bios
     devDependencies:
       '@spriggan/config':
         specifier: workspace:^
@@ -93,6 +118,9 @@ importers:
 
   packages/@spriggan/gui:
     dependencies:
+      '@spriggan/bios':
+        specifier: workspace:^
+        version: link:../bios
       '@spriggan/core':
         specifier: workspace:^
         version: link:../core
