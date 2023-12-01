@@ -1,5 +1,5 @@
 {
-	"extends": "@spriggan/config/typescript/build",
+	"extends": "./typescript/node.json",
 	"include": ["src/**/*.ts"],
 	"exclude": ["src/**/*.spec.ts"],
 	"compilerOptions": {

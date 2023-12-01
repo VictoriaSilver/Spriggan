@@ -3,8 +3,14 @@
 	"pipeline": {
 		"build": {
 			"dependsOn": ["^build"],
-			"inputs": ["src/**"],
-			"outputs": ["out/**"],
+			"inputs": ["src/**", "!src/**/*.spec.ts", "*.json", "typescript/*.json"],
+			"outputs": ["out/**", "!out/**/*.spec.js"],
+			"outputMode": "new-only"
+		},
+		"test": {
+			"dependsOn": ["build"],
+			"inputs": ["src/**/*.spec.ts"],
+			"outputs": ["out/**/*.spec.js"],
 			"outputMode": "new-only"
 		}
 	}

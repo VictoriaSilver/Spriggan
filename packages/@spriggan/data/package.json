@@ -6,11 +6,16 @@
 	"version": "0.0.0",
 	"exports": "./src/index.ts",
 	"scripts": {
-		"build": "tsc -b tsconfig.build.json"
+		"build": "tsc -b tsconfig.build.json",
+		"test": "vitest"
 	},
 	"devDependencies": {
 		"@spriggan/config": "workspace:^",
-		"typescript": "^5.3.2"
+		"@types/node": "^20.10.0",
+		"@vitest/coverage-istanbul": "^0.34.6",
+		"typescript": "^5.3.2",
+		"vite": "^5.0.4",
+		"vitest": "^0.34.6"
 	},
 	"dependencies": {
 		"@spriggan/core": "workspace:^"

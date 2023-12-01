@@ -5,6 +5,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"build": "turbo run build",
+		"test": "turbo run test",
 		"prepare": "husky install"
 	},
 	"nano-staged": {

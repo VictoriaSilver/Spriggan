@@ -1,5 +1,5 @@
 {
-	"extends": "@spriggan/config/typescript/project",
+	"extends": "./typescript/project",
 	"include": [],
 	"references": [
 		{ "path": "./tsconfig.build.json" },
