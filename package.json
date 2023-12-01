@@ -5,14 +5,17 @@
 	"version": "0.0.0",
 	"scripts": {
 		"build": "turbo run build",
+		"build:dist": "turbo run build:dist",
+		"dev": "turbo run dev",
+		"preview": "turbo run preview",
 		"test": "turbo run test",
 		"prepare": "husky install"
 	},
 	"nano-staged": {
-		"*.{json,ts}": [
+		"*.{json,ts,tsx}": [
 			"prettier --write"
 		],
-		"*.ts": [
+		"*.{ts,tsx}": [
 			"biome lint"
 		]
 	},

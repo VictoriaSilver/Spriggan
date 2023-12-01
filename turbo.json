@@ -7,6 +7,20 @@
 			"outputs": ["out/**", "!out/**/*.spec.js"],
 			"outputMode": "new-only"
 		},
+		"build:dist": {
+			"dependsOn": ["test", "^test"],
+			"outputs": ["dist/**"],
+			"outputMode": "new-only"
+		},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		},
+		"preview": {
+			"cache": false,
+			"persistent": true,
+			"dependsOn": ["build:dist"]
+		},
 		"test": {
 			"dependsOn": ["build"],
 			"inputs": ["src/**/*.spec.ts"],

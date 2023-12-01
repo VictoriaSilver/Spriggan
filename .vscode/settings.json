@@ -6,6 +6,7 @@
 	// Declutter with nesting
 	"explorer.fileNesting.patterns": {
 		"*.ts": "${capture}.*.ts",
+		"*.tsx": "${capture}.*.tsx",
 		"package.json": "pnpm-*.yaml"
 	},
 	// Branch protection
