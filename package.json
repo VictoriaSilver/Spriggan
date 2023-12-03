@@ -6,6 +6,7 @@
 	"scripts": {
 		"build": "turbo run build",
 		"build:dist": "turbo run build:dist",
+		"coverage": "turbo run coverage",
 		"dev": "turbo run dev",
 		"preview": "turbo run preview",
 		"test": "turbo run test",

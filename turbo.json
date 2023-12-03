@@ -12,6 +12,12 @@
 			"outputs": ["dist/**"],
 			"outputMode": "new-only"
 		},
+		"coverage": {
+			"dependsOn": ["build"],
+			"inputs": ["src/**/*.spec.ts"],
+			"outputs": ["out/**/*.spec.js"],
+			"outputMode": "new-only"
+		},
 		"dev": {
 			"cache": false,
 			"persistent": true
