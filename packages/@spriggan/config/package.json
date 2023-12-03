@@ -16,7 +16,7 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
-		"@tsconfig/recommended": "^1.0.3",
+		"@tsconfig/strictest": "^2.0.2",
 		"@types/node": "^20.10.1",
 		"@vitest/coverage-istanbul": "^0.34.6",
 		"typescript": "^5.3.2",
