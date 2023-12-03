@@ -1,4 +1,4 @@
-import { type Plugin, normalizePath } from "vite";
+import { normalizePath, type Plugin } from "vite";
 import { filters } from "../util/filters.js";
 
 /**
@@ -53,7 +53,7 @@ export const chunkSplitterPlugin = (): Plugin => ({
 	}
 });
 
-export function nameVendorChunk(chunkID: string) {
+export function nameVendorChunk(chunkID: string): string {
 	// node_modules/dependency/...	-> dependency/...
 	let name = chunkID.slice(
 		chunkID.lastIndexOf("node_modules") + "node_modules".length + 1

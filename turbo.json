@@ -22,13 +22,17 @@
 			"cache": false,
 			"persistent": true
 		},
+		"lint": {
+			"inputs": ["src/**"],
+			"outputMode": "new-only"
+		},
 		"preview": {
 			"cache": false,
 			"persistent": true,
 			"dependsOn": ["build:dist"]
 		},
 		"test": {
-			"dependsOn": ["build"],
+			"dependsOn": ["lint", "build"],
 			"inputs": ["src/**/*.spec.ts"],
 			"outputs": ["out/**/*.spec.js"],
 			"outputMode": "new-only"

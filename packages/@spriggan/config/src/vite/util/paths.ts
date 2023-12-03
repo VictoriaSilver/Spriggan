@@ -17,24 +17,25 @@ export namespace paths {
 		base: string,
 		path: string,
 		...rest: string[]
-	) => normalizePath(resolve(base, path, ...rest));
+	): string => normalizePath(resolve(base, path, ...rest));
 
 	/**
 	 * Solve the relative path from {@link from} to {@link to},
 	 * then normalize it to use forward slashes.
 	 */
-	export const relativeNormalized = (from: string, to: string) =>
+	export const relativeNormalized = (from: string, to: string): string =>
 		normalizePath(relative(from, to));
 
 	/**
 	 * Resolve a path relative to the monorepo root.
 	 */
-	export const fromRoot = (path: string) => resolveNormalized(root, path);
+	export const fromRoot = (path: string): string =>
+		resolveNormalized(root, path);
 
 	/**
 	 * Resolve a path relative to the `packages` directory in the monorepo root.
 	 */
-	export const fromPackages = (path: string) =>
+	export const fromPackages = (path: string): string =>
 		resolveNormalized(packages, path);
 
 	/**

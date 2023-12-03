@@ -8,6 +8,7 @@
 	"scripts": {
 		"build": "tsc -b tsconfig.build.json",
 		"coverage": "vitest --coverage",
+		"lint": "eslint src",
 		"test": "vitest"
 	},
 	"devDependencies": {
@@ -19,6 +20,7 @@
 		"vitest": "^0.34.6"
 	},
 	"dependencies": {
-		"@spriggan/bios": "workspace:^"
+		"@spriggan/bios": "workspace:^",
+		"eslint": "^8.55.0"
 	}
 }

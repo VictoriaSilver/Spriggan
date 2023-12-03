@@ -8,6 +8,7 @@
 		"build:dist": "turbo run build:dist",
 		"coverage": "turbo run coverage",
 		"dev": "turbo run dev",
+		"lint": "turbo run lint",
 		"preview": "turbo run preview",
 		"test": "turbo run test",
 		"prepare": "husky install"
@@ -15,9 +16,6 @@
 	"nano-staged": {
 		"*.{json,ts,tsx}": [
 			"prettier --write"
-		],
-		"*.{ts,tsx}": [
-			"biome lint"
 		]
 	},
 	"devDependencies": {

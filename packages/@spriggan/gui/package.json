@@ -9,6 +9,7 @@
 		"build:dist": "vite build",
 		"coverage": "vitest --coverage",
 		"dev": "vite dev",
+		"lint": "eslint src",
 		"preview": "vite preview",
 		"test": "vitest"
 	},
@@ -23,6 +24,7 @@
 	"dependencies": {
 		"@spriggan/bios": "workspace:^",
 		"@spriggan/core": "workspace:^",
-		"@spriggan/data": "workspace:^"
+		"@spriggan/data": "workspace:^",
+		"eslint": "^8.55.0"
 	}
 }

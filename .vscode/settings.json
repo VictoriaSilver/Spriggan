@@ -3,6 +3,12 @@
 	"asciidoc.antora.enableAntoraSupport": false,
 	// Dumb
 	"conventionalCommits.gitmoji": false,
+	// Required
+	"eslint.experimental.useFlatConfig": true,
+	"eslint.workingDirectories": [
+		{ "pattern": "./packages/*/*" },
+		{ "pattern": "./packages/*" }
+	],
 	// Declutter with nesting
 	"explorer.fileNesting.patterns": {
 		"*.ts": "${capture}.*.ts",
