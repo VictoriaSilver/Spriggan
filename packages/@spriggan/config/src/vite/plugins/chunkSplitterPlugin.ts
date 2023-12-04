@@ -1,3 +1,4 @@
+/* v8 ignore start */
 import { normalizePath, type Plugin } from "vite";
 import { filters } from "../util/filters.js";
 
@@ -14,7 +15,6 @@ import { filters } from "../util/filters.js";
  *
  * 	- `vue` becomes `/vendor/vue.js`
  */
-/* istanbul ignore next -- @preserve */
 export const chunkSplitterPlugin = (): Plugin => ({
 	name: "Spriggan Chunk Splitter Plugin",
 	config() {

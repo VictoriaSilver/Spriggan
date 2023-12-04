@@ -1,6 +1,6 @@
+/* v8 ignore start */
 import { defineConfig } from "vitest/config";
 
-/* istanbul ignore file -- @preserve */
 export const vitestConfig = defineConfig({
 	test: {
 		globals: true,
@@ -14,7 +14,6 @@ export const vitestConfig = defineConfig({
 		coverage: {
 			all: true,
 			include: ["src/**"],
-			provider: "istanbul",
 			reporter: ["text", "html", "cobertura"]
 		}
 	}
