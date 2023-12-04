@@ -9,7 +9,8 @@
 		"build": "tsc -b tsconfig.build.json",
 		"coverage": "vitest --coverage",
 		"lint": "eslint src",
-		"test": "vitest"
+		"test": "vitest",
+		"turbo": "turbo"
 	},
 	"devDependencies": {
 		"@spriggan/config": "workspace:^",

@@ -11,7 +11,8 @@
 		"dev": "vite dev",
 		"lint": "eslint src",
 		"preview": "vite preview",
-		"test": "vitest"
+		"test": "vitest",
+		"turbo": "turbo"
 	},
 	"devDependencies": {
 		"@spriggan/config": "workspace:^",
