@@ -1,0 +1,22 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All Tests in BIOS" type="JavaScriptTestRunnerVitest">
+    <config value="$PROJECT_DIR$/packages/@spriggan/bios/vitest.config.ts" />
+    <node-interpreter value="project" />
+    <vitest-package value="$PROJECT_DIR$/packages/@spriggan/bios/node_modules/vitest" />
+    <working-dir value="$PROJECT_DIR$/packages/@spriggan/bios" />
+    <envs />
+    <scope-kind value="ALL" />
+    <method v="2">
+      <option name="NpmBeforeRunTask" enabled="true">
+        <package-json value="$PROJECT_DIR$/packages/@spriggan/bios/package.json" />
+        <command value="run" />
+        <scripts>
+          <script value="turbo" />
+        </scripts>
+        <arguments value="build" />
+        <node-interpreter value="project" />
+        <envs />
+      </option>
+    </method>
+  </configuration>
+</component>
