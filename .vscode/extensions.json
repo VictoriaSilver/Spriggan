@@ -1,7 +1,6 @@
 {
 	"recommendations": [
 		"asciidoctor.asciidoctor-vscode",
-		"biomejs.biome",
 		"editorconfig.editorconfig",
 		"esbenp.prettier-vscode",
 		"vivaxy.vscode-conventional-commits"
