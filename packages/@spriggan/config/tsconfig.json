@@ -1,0 +1,9 @@
+{
+	"extends": "./typescript/project",
+	"include": [],
+	"references": [
+		{ "path": "./tsconfig.build.json" },
+		{ "path": "./tsconfig.spec.json" },
+		{ "path": "./tsconfig.vitest.json" }
+	]
+}

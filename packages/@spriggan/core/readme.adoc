@@ -1,0 +1,4 @@
+== @spriggan/core
+
+* Contains the main game APIs, which will extend classes from `@spriggan/bios`
+* Re-exports `@spriggan/bios` to simplify downstream dependencies

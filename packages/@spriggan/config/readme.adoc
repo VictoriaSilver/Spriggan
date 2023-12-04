@@ -1,0 +1,4 @@
+== @spriggan/config
+
+* Contains shared configurations for build tools, such as Typescript, Vite, and Vitest
+* Contains plugins for build tools

@@ -1,0 +1,9 @@
+{
+	"extends": "./typescript/node.json",
+	"include": ["src/**/*.ts"],
+	"exclude": ["src/**/*.spec.ts"],
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "out"
+	}
+}

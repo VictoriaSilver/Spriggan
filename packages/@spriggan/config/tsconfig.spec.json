@@ -1,0 +1,9 @@
+{
+	"extends": "./typescript/spec",
+	"include": ["src/**/*.spec.ts"],
+	"compilerOptions": {
+		"baseUrl": "src",
+		"outDir": "out"
+	},
+	"references": [{ "path": "./tsconfig.build.json" }]
+}

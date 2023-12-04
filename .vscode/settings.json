@@ -1,0 +1,33 @@
+{
+	// Because it will keep asking and altering this file otherwise
+	"asciidoc.antora.enableAntoraSupport": false,
+	// Dumb
+	"conventionalCommits.gitmoji": false,
+	// Required
+	"eslint.experimental.useFlatConfig": true,
+	"eslint.workingDirectories": [
+		{ "pattern": "./packages/*/*" },
+		{ "pattern": "./packages/*" }
+	],
+	// Declutter with nesting
+	"explorer.fileNesting.patterns": {
+		"*.ts": "${capture}.*.ts",
+		"*.tsx": "${capture}.*.tsx",
+		"package.json": "pnpm-*.yaml"
+	},
+	// Branch protection
+	"git.branchProtection": ["master", "dev"],
+	"git.branchProtectionPrompt": "alwaysPrompt",
+	// For safety
+	"typescript.tsdk": "packages/@spriggan/config/node_modules/typescript/lib",
+	// Use Prettier
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}

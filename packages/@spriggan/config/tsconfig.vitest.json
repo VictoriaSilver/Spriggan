@@ -1,0 +1,11 @@
+{
+	"extends": "./typescript/node",
+	"include": ["vitest.config.ts"],
+	"compilerOptions": {
+		"outDir": "out"
+	},
+	"references": [
+		{ "path": "./tsconfig.spec.json" },
+		{ "path": "./tsconfig.build.json" }
+	]
+}

@@ -1,0 +1,22 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All Tests in Config" type="JavaScriptTestRunnerVitest">
+    <config value="$PROJECT_DIR$/packages/@spriggan/config/vitest.config.ts" />
+    <node-interpreter value="project" />
+    <vitest-package value="$PROJECT_DIR$/packages/@spriggan/config/node_modules/vitest" />
+    <working-dir value="$PROJECT_DIR$/packages/@spriggan/config" />
+    <envs />
+    <scope-kind value="ALL" />
+    <method v="2">
+      <option name="NpmBeforeRunTask" enabled="true">
+        <package-json value="$PROJECT_DIR$/packages/@spriggan/config/package.json" />
+        <command value="run" />
+        <scripts>
+          <script value="turbo" />
+        </scripts>
+        <arguments value="build" />
+        <node-interpreter value="project" />
+        <envs />
+      </option>
+    </method>
+  </configuration>
+</component>

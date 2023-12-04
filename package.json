@@ -1,0 +1,31 @@
+{
+	"name": "@spriggan/monorepo",
+	"private": true,
+	"license": "GPL-3.0-only",
+	"version": "0.0.0",
+	"scripts": {
+		"build": "turbo run build",
+		"build:dist": "turbo run build:dist",
+		"coverage": "turbo run coverage",
+		"dev": "turbo run dev",
+		"lint": "turbo run lint",
+		"preview": "turbo run preview",
+		"test": "turbo run test",
+		"prepare": "husky install"
+	},
+	"nano-staged": {
+		"*.{json,ts,tsx}": [
+			"prettier --write"
+		]
+	},
+	"devDependencies": {
+		"@vitest/coverage-v8": "^1.0.0",
+		"husky": "^8.0.3",
+		"nano-staged": "^0.8.0",
+		"prettier": "^3.1.0",
+		"turbo": "^1.10.16"
+	},
+	"dependencies": {
+		"vitest": "^1.0.0"
+	}
+}

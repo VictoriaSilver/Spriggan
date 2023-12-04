@@ -1,0 +1,41 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"inputs": ["src/**", "!src/**/*.spec.ts", "*.json", "typescript/*.json"],
+			"outputs": ["out/**", "!out/**/*.spec.js"],
+			"outputMode": "new-only"
+		},
+		"build:dist": {
+			"dependsOn": ["test", "^test"],
+			"outputs": ["dist/**"],
+			"outputMode": "new-only"
+		},
+		"coverage": {
+			"dependsOn": ["build"],
+			"inputs": ["src/**/*.spec.ts"],
+			"outputs": ["out/**/*.spec.js"],
+			"outputMode": "new-only"
+		},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		},
+		"lint": {
+			"inputs": ["src/**"],
+			"outputMode": "new-only"
+		},
+		"preview": {
+			"cache": false,
+			"persistent": true,
+			"dependsOn": ["build:dist"]
+		},
+		"test": {
+			"dependsOn": ["lint", "build"],
+			"inputs": ["src/**/*.spec.ts"],
+			"outputs": ["out/**/*.spec.js"],
+			"outputMode": "new-only"
+		}
+	}
+}
