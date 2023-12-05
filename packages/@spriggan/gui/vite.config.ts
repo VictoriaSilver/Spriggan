@@ -1,5 +1,6 @@
 import {
 	chunkSplitterPlugin,
+	contentLoaderPlugin,
 	sourcemapPlugin,
 	vitestConfig
 } from "@spriggan/config/vite";
@@ -11,7 +12,11 @@ export default defineConfig(({ mode }) => {
 	return mergeConfig(
 		vitestConfig,
 		defineConfig({
-			plugins: [sourcemapPlugin(isDev), chunkSplitterPlugin()]
+			plugins: [
+				sourcemapPlugin(isDev),
+				contentLoaderPlugin(),
+				chunkSplitterPlugin()
+			]
 		})
 	);
 });
