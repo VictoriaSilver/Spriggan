@@ -16,6 +16,32 @@ export class Log {
 		this.tag = `[${name}]`;
 	}
 
+	/** Whether the log is running in a debug environment. */
+	isDebug(): boolean {
+		return import.meta.env.DEV ?? false;
+	}
+
+	/**
+	 * Write data to the error channel if running in a debug environment.
+	 */
+	debugError(data: unknown, ...rest: unknown[]): void {
+		if (this.isDebug()) this.error(data, ...rest);
+	}
+
+	/**
+	 * Write data to the information channel if running in a debug environment.
+	 */
+	debugInfo(data: unknown, ...rest: unknown[]): void {
+		if (this.isDebug()) this.info(data, ...rest);
+	}
+
+	/**
+	 * Write data to the warning channel if running in a debug environment.
+	 */
+	debugWarn(data: unknown, ...rest: unknown[]): void {
+		if (this.isDebug()) this.warn(data, ...rest);
+	}
+
 	/** Write data to the error channel. */
 	error(data: unknown, ...rest: unknown[]): void {
 		this.provider.error(this.tag, data, ...rest);
