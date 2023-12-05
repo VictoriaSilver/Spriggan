@@ -2,6 +2,9 @@ import type { LoggingProvider } from "./loggingProvider";
 
 /** Writes messages to various text channels. */
 export class Log {
+	/** Prepended to descriptions from {@link assert}. */
+	static ASSERTION_FAILED = "Assertion failed:";
+
 	/** An identifying string which is prepended to each message. */
 	tag: string;
 
@@ -19,6 +22,19 @@ export class Log {
 	/** Whether the log is running in a debug environment. */
 	isDebug(): boolean {
 		return import.meta.env.DEV ?? false;
+	}
+
+	/**
+	 * Assert that a given condition is true, and log an error if it is not and
+	 * the log is running in a debug environment.
+	 */
+	debugAssert(
+		condition: boolean,
+		errorDescription: string,
+		...additionalData: unknown[]
+	): void {
+		if (this.isDebug())
+			this.assert(condition, errorDescription, ...additionalData);
 	}
 
 	/**
@@ -40,6 +56,18 @@ export class Log {
 	 */
 	debugWarn(data: unknown, ...rest: unknown[]): void {
 		if (this.isDebug()) this.warn(data, ...rest);
+	}
+
+	/**
+	 * Assert that a given condition is true, and log an error if it is not.
+	 */
+	assert(
+		condition: boolean,
+		errorDescription: string,
+		...additionalData: unknown[]
+	): void {
+		if (!condition)
+			this.error(Log.ASSERTION_FAILED, errorDescription, ...additionalData);
 	}
 
 	/** Write data to the error channel. */

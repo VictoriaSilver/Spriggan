@@ -67,4 +67,37 @@ describe("Log", () => {
 		// Should not be called again
 		expect(provider[providerKey]).toHaveBeenCalledOnce();
 	});
+
+	it("should handle assertions", () => {
+		const message = Math.random().toString();
+		const data = {};
+
+		// Should not call; condition is true
+		log.assert(true, message, data);
+		expect(provider.error).not.toHaveBeenCalled();
+
+		// Should call; condition is false
+		log.assert(false, message, data);
+		expect(provider.error).toHaveBeenCalledWith(
+			log.tag,
+			Log.ASSERTION_FAILED,
+			message,
+			data
+		);
+
+		// Should call; condition is false, isDebug is true
+		log.debugAssert(false, message, data);
+		expect(provider.error).toHaveBeenNthCalledWith(
+			2,
+			log.tag,
+			Log.ASSERTION_FAILED,
+			message,
+			data
+		);
+
+		// Should not call; isDebug is false
+		isDebug = false;
+		log.debugAssert(false, message, data);
+		expect(provider.error).toHaveBeenCalledTimes(2);
+	});
 });
