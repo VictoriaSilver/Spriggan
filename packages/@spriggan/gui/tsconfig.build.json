@@ -1,12 +1,14 @@
 {
-	"extends": "@spriggan/config/typescript/build",
+	"extends": "@spriggan/config/typescript/build.dom",
 	"include": ["src/**/*.ts"],
 	"exclude": ["src/**/*.spec.ts"],
 	"compilerOptions": {
 		"rootDir": "src",
-		"outDir": "out",
-		"jsx": "preserve",
-		"lib": ["ESNext", "DOM", "DOM.Iterable"]
+		"outDir": "out"
 	},
-	"references": [{ "path": "../core/tsconfig.build.json" }]
+	"references": [
+		{
+			"path": "../core/tsconfig.build.json"
+		}
+	]
 }

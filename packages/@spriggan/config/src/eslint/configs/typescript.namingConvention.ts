@@ -70,6 +70,12 @@ export function namingConvention(): Linter.RuleLevelAndOptions<[...Options[]]> {
 			leadingUnderscore: "require"
 		},
 		{
+			// Allow static members to be upper-snake-case
+			selector: "memberLike",
+			modifiers: ["static"],
+			format: ["camelCase", "UPPER_CASE"]
+		},
+		{
 			// Pascal-case classes/etc
 			selector: "typeLike",
 			format: ["PascalCase"]
