@@ -19,13 +19,13 @@ const badVirtualModule = `_${Math.random()}`;
 describe("ProjectContentLoader", () => {
 	let projectManager: ProjectManager;
 	let contentLoader: ProjectContentLoader;
-
-	const createFakeProject = (): ProjectData =>
-		defineProject(projectManager, goodDataName, ProjectType.DATA);
+	let project: ProjectData;
 
 	beforeEach(() => {
 		projectManager = new ProjectManager();
 		contentLoader = new ProjectContentLoader(projectManager);
+
+		project = defineProject(projectManager, goodDataName, ProjectType.DATA);
 	});
 
 	it("should identify when to resolve an ID", () => {
@@ -79,8 +79,6 @@ describe("ProjectContentLoader", () => {
 	});
 
 	it("should generate content imports", async () => {
-		const project = createFakeProject();
-
 		const rootFile = "rootFile";
 		const nestedFile = "nested/file";
 		const expected = new MagicString("");
@@ -110,7 +108,6 @@ describe("ProjectContentLoader", () => {
 
 	it("should inject the content loader import", async () => {
 		const fakeReader = async (): Promise<string> => "";
-		const project = createFakeProject();
 
 		const loaded = await contentLoader.injectLoader(
 			project.paths.entry,

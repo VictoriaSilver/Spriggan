@@ -3,8 +3,8 @@ import type { PathLike } from "fs";
 import { readFile } from "fs/promises";
 import MagicString, { type SourceMap } from "magic-string";
 import { dirname, parse } from "path";
+import { normalizePath } from "vite";
 import { INJECTED_PREFIX } from "../util/constants.js";
-import { filters } from "../util/filters.js";
 import { paths } from "../util/paths.js";
 import { ProjectDataMissingError } from "./errors/projectDataMissingError.js";
 import type { ProjectData } from "./projectData.js";
@@ -21,11 +21,13 @@ export type ProjectFileReader = (
 const defaultProjectFileGetter: ProjectFileGetter = (project) =>
 	glob(
 		[
-			paths.target.include,
-			`!${project.paths.entryFileName}${project.paths.entryFileExtension}`,
-			`!${paths.target.exclude}`
+			...paths.target.include,
+			`!${project.paths.entryFileName}${project.paths.entryFileExtension}`
 		],
-		{ cwd: project.paths.entryDirectory }
+		{
+			cwd: project.paths.entryDirectory,
+			ignore: [...paths.target.exclude]
+		}
 	);
 
 /* v8 ignore stop */
@@ -38,7 +40,9 @@ export class ProjectContentLoader {
 	 * loader injected.
 	 */
 	shouldInjectLoader(file: string): boolean {
-		return filters.dataEntry(file);
+		const normalized = normalizePath(file);
+
+		return this.projectManager.fileIsDataEntry(normalized);
 	}
 
 	/**
@@ -53,7 +57,10 @@ export class ProjectContentLoader {
 	 * is a virtual content module.
 	 */
 	shouldResolveID(id: string, importer: string | undefined): boolean {
-		return filters.dataEntry(importer) && id.startsWith(INJECTED_PREFIX);
+		return (
+			this.projectManager.fileIsDataEntry(importer) &&
+			id.startsWith(INJECTED_PREFIX)
+		);
 	}
 
 	/** Appends an import for the content loader. */

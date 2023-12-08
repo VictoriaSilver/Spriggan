@@ -8,4 +8,4 @@ export * from "./plugins/sourcemapPlugin.js";
 
 defineProject(ProjectManager.global, "@spriggan/core", ProjectType.CORE);
 defineProject(ProjectManager.global, "@spriggan/data", ProjectType.DATA);
-defineProject(ProjectManager.global, "@spriggan/gui", ProjectType.CORE);
+defineProject(ProjectManager.global, "@spriggan/gui", ProjectType.GUI);

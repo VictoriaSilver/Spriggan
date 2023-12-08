@@ -1,6 +1,8 @@
 /* v8 ignore start */
 import { normalizePath, type Plugin } from "vite";
 import { filters } from "../util/filters.js";
+import { ProjectManager } from "../project/projectManager.js";
+import { ProjectType } from "../project/projectType.js";
 
 /**
  * Splits chunks by purpose and origin.
@@ -36,11 +38,20 @@ export const chunkSplitterPlugin = (): Plugin => ({
 								case filters.vendorContent(normalizedID):
 									return nameVendorChunk(normalizedID);
 								case filters.indexHtml(normalizedID):
-								case filters.guiContent(normalizedID):
+								case ProjectManager.global.fileIsContentType(
+									normalizedID,
+									ProjectType.GUI
+								):
 									return "spriggan.gui";
-								case filters.dataContent(normalizedID):
+								case ProjectManager.global.fileIsContentType(
+									normalizedID,
+									ProjectType.DATA
+								):
 									return "spriggan.data";
-								case filters.coreContent(normalizedID):
+								case ProjectManager.global.fileIsContentType(
+									normalizedID,
+									ProjectType.CORE
+								):
 									return "spriggan.core";
 							}
 

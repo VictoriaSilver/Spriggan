@@ -63,7 +63,7 @@ export namespace paths {
 	 */
 	export namespace target {
 		export const extensions = "ts,tsx";
-		export const include = `**/*.{${extensions}}`;
-		export const exclude = `**/*.spec.{${extensions}}`;
+		export const include = [`**/*.{${extensions}}`];
+		export const exclude = [`**/*.spec.{${extensions}}`];
 	}
 }
