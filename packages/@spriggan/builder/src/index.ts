@@ -10,3 +10,5 @@ defineProject(ProjectManager.global, "@spriggan/bios", ProjectType.CORE);
 defineProject(ProjectManager.global, "@spriggan/core", ProjectType.CORE);
 defineProject(ProjectManager.global, "@spriggan/data", ProjectType.DATA);
 defineProject(ProjectManager.global, "@spriggan/gui", ProjectType.GUI);
+
+defineProject(ProjectManager.global, "@example/mod", ProjectType.DATA);

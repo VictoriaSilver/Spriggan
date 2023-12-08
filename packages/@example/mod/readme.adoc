@@ -1,0 +1,3 @@
+== @spriggan/data
+
+* Contains the game's content definitions and assets
