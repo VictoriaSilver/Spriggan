@@ -7,7 +7,7 @@ export namespace paths {
 	 * The root directory of the Spriggan monorepo.
 	 */
 	export const root = normalizePath(
-		fileURLToPath(new URL("../../../../../../", import.meta.url))
+		fileURLToPath(new URL("../../../../../", import.meta.url))
 	);
 
 	/**

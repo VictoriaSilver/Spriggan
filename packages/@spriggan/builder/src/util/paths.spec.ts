@@ -6,7 +6,7 @@ describe("paths", () => {
 
 	it("should correctly resolve", () => {
 		const fromPackages = pathToFileURL(
-			paths.fromPackages("@spriggan/config/src/vite/util/paths.spec.ts")
+			paths.fromPackages("@spriggan/builder/src/util/paths.spec.ts")
 		).toString();
 
 		expect(fromPackages).toEqual(localFile);

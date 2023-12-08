@@ -1,0 +1,15 @@
+{
+	"extends": "@spriggan/config/typescript/node",
+	"include": ["vitest.config.ts"],
+	"compilerOptions": {
+		"outDir": "out"
+	},
+	"references": [
+		{
+			"path": "./tsconfig.spec.json"
+		},
+		{
+			"path": "../config/tsconfig.build.json"
+		}
+	]
+}

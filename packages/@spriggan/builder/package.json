@@ -4,10 +4,15 @@
 	"type": "module",
 	"license": "GPL-3.0-only",
 	"version": "0.0.0",
+	"exports": {
+		"default": "./out/index.js",
+		"types": "./src/index.ts"
+	},
 	"scripts": {
 		"build": "tsc -b tsconfig.build.json",
 		"coverage": "vitest --coverage",
 		"lint": "eslint src",
+		"test": "vitest",
 		"turbo": "turbo"
 	},
 	"devDependencies": {
@@ -15,6 +20,9 @@
 		"@types/node": "^20.10.3",
 		"@vitest/coverage-v8": "^1.0.0",
 		"eslint": "^8.55.0",
+		"fast-glob": "^3.3.2",
+		"magic-string": "^0.30.5",
+		"rollup": "^4.6.1",
 		"typescript": "^5.3.2",
 		"vite": "^5.0.5",
 		"vitest": "^1.0.0"
