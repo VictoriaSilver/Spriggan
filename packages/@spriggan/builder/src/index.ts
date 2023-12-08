@@ -12,6 +12,3 @@ export * from "./plugins/sourcemapPlugin.js";
 defineCoreProject("@spriggan/bios");
 defineCoreProject("@spriggan/core");
 defineDataProject("@spriggan/data");
-defineGUIProject("@spriggan/gui");
-
-defineDataProject("@example/mod");
