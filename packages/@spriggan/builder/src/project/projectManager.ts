@@ -28,13 +28,6 @@ export class ProjectManager {
 		);
 	}
 
-	fileIsContentType(id: string | undefined, type: ProjectType): boolean {
-		if (id === undefined) return false;
-		return this.knownProjects.some(
-			(p) => p.type === type && p.filters.allContent(id)
-		);
-	}
-
 	nameChunk(id: string): string | null {
 		if (ProjectManager.vendorFilter(id)) return this.nameVendorChunk(id);
 
