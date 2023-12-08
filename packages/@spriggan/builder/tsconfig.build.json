@@ -1,0 +1,9 @@
+{
+	"extends": "@spriggan/config/typescript/node",
+	"include": ["src/**/*.ts"],
+	"exclude": ["src/**/*.spec.ts"],
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "out"
+	}
+}
