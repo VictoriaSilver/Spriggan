@@ -7,6 +7,7 @@ import type { ProjectType } from "./projectType.js";
 type Filter = (id: string | unknown) => boolean;
 
 export class ProjectData {
+	chunkName: string;
 	files?: string[];
 	filters: ProjectData.Filters;
 	paths: ProjectData.Paths;
@@ -17,9 +18,14 @@ export class ProjectData {
 		public type: ProjectType,
 		entryPoint: string
 	) {
+		this.chunkName = ProjectData.generateChunkName(name);
 		this.virtualModuleID = ProjectData.generateVirtualModuleID(name);
 		this.paths = ProjectData.generatePaths(name, entryPoint);
 		this.filters = ProjectData.generateFilters(this.paths);
+	}
+
+	static generateChunkName(name: string): string {
+		return name.startsWith("@") ? name.slice(1).replace("/", ".") : name;
 	}
 
 	static generateVirtualModuleID(name: string): string {
@@ -59,8 +65,17 @@ export class ProjectData {
 				{
 					resolve: projectPaths.entryDirectory
 				}
-			)
+			),
+			allProjectFiles: createFilter("./**/*", [], {
+				resolve: projectPaths.root
+			})
 		};
+	}
+
+	ownsFile(id: string, useRoot = false): boolean {
+		return (useRoot ? this.filters.allProjectFiles : this.filters.allContent)(
+			id
+		);
 	}
 }
 
@@ -74,7 +89,21 @@ export declare module ProjectData {
 	}
 
 	export interface Filters {
+		/**
+		 * All files in the same directory as the entry file, as well as its
+		 * subdirectories, which match {@link paths.target.include} but not
+		 * {@link paths.target.exclude}.
+		 */
 		allContent: Filter;
+		/**
+		 * All files in the same directory as the entry file which aren't the entry
+		 * file, as well as its subdirectories, which match
+		 * {@link paths.target.include} but not {@link paths.target.exclude}.
+		 */
 		allNonEntryContent: Filter;
+		/**
+		 * *All* files contained within the project's directory and subdirectories.
+		 */
+		allProjectFiles: Filter;
 	}
 }

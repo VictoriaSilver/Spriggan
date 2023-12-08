@@ -1,8 +1,6 @@
 /* v8 ignore start */
 import { normalizePath, type Plugin } from "vite";
 import { ProjectManager } from "../project/projectManager.js";
-import { ProjectType } from "../project/projectType.js";
-import { filters } from "../util/filters.js";
 
 /**
  * Splits chunks by purpose and origin.
@@ -29,33 +27,13 @@ export const chunkSplitterPlugin = (): Plugin => ({
 						hoistTransitiveImports: false,
 						inlineDynamicImports: false,
 
+						entryFileNames: "assets/[name].js",
 						chunkFileNames: "assets/[name].js",
 						assetFileNames: "assets/[name][extname]",
 						manualChunks(chunkID) {
 							const normalizedID = normalizePath(chunkID);
 
-							switch (true) {
-								case filters.vendorContent(normalizedID):
-									return nameVendorChunk(normalizedID);
-								case filters.indexHtml(normalizedID):
-								case ProjectManager.global.fileIsContentType(
-									normalizedID,
-									ProjectType.GUI
-								):
-									return "spriggan.gui";
-								case ProjectManager.global.fileIsContentType(
-									normalizedID,
-									ProjectType.DATA
-								):
-									return "spriggan.data";
-								case ProjectManager.global.fileIsContentType(
-									normalizedID,
-									ProjectType.CORE
-								):
-									return "spriggan.core";
-							}
-
-							return null;
+							return ProjectManager.global.nameChunk(normalizedID);
 						}
 					}
 				}
@@ -63,16 +41,3 @@ export const chunkSplitterPlugin = (): Plugin => ({
 		};
 	}
 });
-
-export function nameVendorChunk(chunkID: string): string {
-	// node_modules/dependency/...	-> dependency/...
-	let name = chunkID.slice(
-		chunkID.lastIndexOf("node_modules") + "node_modules".length + 1
-	);
-	// @group/project/... 	->	group.project/...
-	if (name.startsWith("@")) name = name.slice(1).replace("/", ".");
-	// dependency/...	->	dependency
-	name = name.slice(0, name.indexOf("/"));
-
-	return `vendor/${name}`;
-}

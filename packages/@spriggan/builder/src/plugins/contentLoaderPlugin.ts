@@ -10,6 +10,18 @@ export const contentLoaderPlugin = (): Plugin => {
 
 	return {
 		name: "Spriggan Content Loader Plugin",
+		config() {
+			const projectEntries: Record<string, string> = {};
+
+			for (const project of ProjectManager.global.knownProjects)
+				projectEntries[project.chunkName] = project.paths.entry;
+
+			return {
+				build: {
+					rollupOptions: { input: projectEntries }
+				}
+			};
+		},
 		async load(id): Promise<LoadResult> {
 			if (contentLoader.shouldInjectLoader(id))
 				return contentLoader.injectLoader(id);
