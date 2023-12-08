@@ -26,7 +26,7 @@ export class ProjectManager {
 	fileIsContentType(id: string | undefined, type: ProjectType): boolean {
 		if (id === undefined) return false;
 		return this.knownProjects.some(
-			(p) => p.type === type && p.files!.includes(id)
+			(p) => p.type === type && p.filters.allContent(id)
 		);
 	}
 }

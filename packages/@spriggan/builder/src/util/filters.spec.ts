@@ -8,21 +8,4 @@ describe("filters", () => {
 
 		expect(filters.vendorContent(path)).toEqual(true);
 	});
-
-	describe("createSourceFilter", () => {
-		it("should include only files under src/ in the project root", () => {
-			const projectRoot = paths.fromPackages("@group/project");
-			const otherRoot = paths.fromPackages("@group/otherProject");
-			const projectFilter = filters.createSourceFilter(projectRoot);
-
-			const goodSource = `${projectRoot}/src/${Math.random()}.ts`;
-			expect(projectFilter(goodSource)).toEqual(true);
-
-			const badSource = `${otherRoot}/src/${Math.random()}.ts`;
-			expect(projectFilter(badSource)).toEqual(false);
-
-			const notSource = `${projectRoot}/out/${Math.random()}.js`;
-			expect(projectFilter(notSource)).toEqual(false);
-		});
-	});
 });

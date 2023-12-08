@@ -1,8 +1,8 @@
 /* v8 ignore start */
 import { normalizePath, type Plugin } from "vite";
-import { filters } from "../util/filters.js";
 import { ProjectManager } from "../project/projectManager.js";
 import { ProjectType } from "../project/projectType.js";
+import { filters } from "../util/filters.js";
 
 /**
  * Splits chunks by purpose and origin.
