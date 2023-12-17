@@ -1,10 +1,14 @@
 {
 	"extends": "@spriggan/config/typescript/build",
-	"include": ["src/**/*.ts"],
+	"include": ["src"],
 	"exclude": ["src/**/*.spec.ts"],
 	"compilerOptions": {
 		"rootDir": "src",
 		"outDir": "out"
 	},
-	"references": [{ "path": "../bios/tsconfig.build.json" }]
+	"references": [
+		{
+			"path": "../bios/tsconfig.build.json"
+		}
+	]
 }

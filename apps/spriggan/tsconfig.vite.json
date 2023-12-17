@@ -5,7 +5,14 @@
 		"outDir": "out"
 	},
 	"references": [
-		{ "path": "./tsconfig.spec.json" },
-		{ "path": "../config/tsconfig.build.json" }
+		{
+			"path": "./tsconfig.spec.json"
+		},
+		{
+			"path": "../builder/tsconfig.build.json"
+		},
+		{
+			"path": "../config/tsconfig.build.json"
+		}
 	]
 }

@@ -1,6 +1,6 @@
 {
-	"extends": "./typescript/node.json",
-	"include": ["src"],
+	"extends": "@spriggan/config/typescript/node",
+	"include": ["src/**/*.ts"],
 	"exclude": ["src/**/*.spec.ts"],
 	"compilerOptions": {
 		"rootDir": "src",

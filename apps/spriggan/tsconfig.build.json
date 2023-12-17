@@ -1,5 +1,5 @@
 {
-	"extends": "@spriggan/config/typescript/build",
+	"extends": "@spriggan/config/typescript/build.dom",
 	"include": ["src"],
 	"exclude": ["src/**/*.spec.ts"],
 	"compilerOptions": {
@@ -8,7 +8,7 @@
 	},
 	"references": [
 		{
-			"path": "../core/tsconfig.build.json"
+			"path": "../../packages/@spriggan/core/tsconfig.build.json"
 		}
 	]
 }

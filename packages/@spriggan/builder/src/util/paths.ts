@@ -7,7 +7,7 @@ export namespace paths {
 	 * The root directory of the Spriggan monorepo.
 	 */
 	export const root = normalizePath(
-		fileURLToPath(new URL("../../../../../../", import.meta.url))
+		fileURLToPath(new URL("../../../../../", import.meta.url))
 	);
 
 	/**
@@ -44,16 +44,6 @@ export namespace paths {
 	export const packages = fromRoot("packages");
 
 	/**
-	 * The directory of Spriggan's core.
-	 */
-	export const core = fromPackages("@spriggan/core");
-
-	/**
-	 * The directory of Spriggan's game data.
-	 */
-	export const data = fromPackages("@spriggan/data");
-
-	/**
 	 * The directory of Spriggan's GUI.
 	 */
 	export const gui = fromPackages("@spriggan/gui");
@@ -63,7 +53,7 @@ export namespace paths {
 	 */
 	export namespace target {
 		export const extensions = "ts,tsx";
-		export const include = `**/*.{${extensions}}`;
-		export const exclude = `**/*.spec.{${extensions}}`;
+		export const include = [`./**/*.{${extensions}}`];
+		export const exclude = [`**/*.spec.{${extensions}}`];
 	}
 }

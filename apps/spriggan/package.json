@@ -1,18 +1,21 @@
 {
-	"name": "@spriggan/data",
+	"name": "@spriggan/app",
 	"private": true,
 	"type": "module",
 	"license": "GPL-3.0-only",
 	"version": "0.0.0",
-	"exports": "./src/index.ts",
 	"scripts": {
 		"build": "tsc -b tsconfig.build.json",
+		"build:dist": "vite build",
 		"coverage": "vitest --coverage",
+		"dev": "vite dev",
 		"lint": "eslint src",
+		"preview": "vite preview",
 		"test": "vitest",
 		"turbo": "turbo"
 	},
 	"devDependencies": {
+		"@spriggan/builder": "workspace:^",
 		"@spriggan/config": "workspace:^",
 		"@types/node": "^20.10.5",
 		"@vitest/coverage-v8": "^1.0.4",
@@ -22,6 +25,9 @@
 		"vitest": "^1.0.4"
 	},
 	"dependencies": {
-		"@spriggan/core": "workspace:^"
+		"@spriggan/bios": "workspace:^",
+		"@spriggan/core": "workspace:^",
+		"@spriggan/data": "workspace:^",
+		"@spriggan/gui": "workspace:^"
 	}
 }
