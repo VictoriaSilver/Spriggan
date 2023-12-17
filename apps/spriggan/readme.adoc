@@ -1,0 +1,4 @@
+== @spriggan/app
+
+* Acts as the build system
+
