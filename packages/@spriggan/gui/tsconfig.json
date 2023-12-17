@@ -2,8 +2,14 @@
 	"extends": "@spriggan/config/typescript/project",
 	"include": [],
 	"references": [
-		{ "path": "./tsconfig.build.json" },
-		{ "path": "./tsconfig.spec.json" },
-		{ "path": "./tsconfig.vite.json" }
+		{
+			"path": "./tsconfig.build.json"
+		},
+		{
+			"path": "./tsconfig.spec.json"
+		},
+		{
+			"path": "./tsconfig.vitest.json"
+		}
 	]
 }

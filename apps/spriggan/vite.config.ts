@@ -17,6 +17,11 @@ export default defineConfig(({ mode }) => {
 	return mergeConfig(
 		vitestConfig,
 		defineConfig({
+			build: {
+				rollupOptions: {
+					input: { spriggan: "index.html" }
+				}
+			},
 			plugins: [
 				sourcemapPlugin(isDev),
 				contentLoaderPlugin(),

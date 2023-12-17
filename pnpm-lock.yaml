@@ -281,9 +281,6 @@ importers:
         specifier: workspace:^
         version: link:../data
     devDependencies:
-      '@spriggan/builder':
-        specifier: workspace:^
-        version: link:../builder
       '@spriggan/config':
         specifier: workspace:^
         version: link:../config
