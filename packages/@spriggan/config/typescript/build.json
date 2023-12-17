@@ -1,5 +1,8 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": ["./$root.json", "./$module.json"],
-	"compilerOptions": { "types": ["vite/client"] }
+	"compilerOptions": {
+		"jsx": "preserve",
+		"types": ["vite/client"]
+	}
 }
