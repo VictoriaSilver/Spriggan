@@ -1,6 +1,6 @@
 {
 	"extends": "./typescript/node.json",
-	"include": ["src/**/*.ts"],
+	"include": ["src"],
 	"exclude": ["src/**/*.spec.ts"],
 	"compilerOptions": {
 		"rootDir": "src",
